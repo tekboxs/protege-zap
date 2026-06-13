@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import {
   Shield,
@@ -32,17 +32,6 @@ const staggerContainer = {
 }
 
 export default function Home() {
-  const [nome, setNome] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setNome('')
-    }, 3000)
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -419,74 +408,21 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.form
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            onSubmit={handleSubmit}
-            className="space-y-6 bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-blue-100"
+          <motion.div
+            {...fadeInUp}
+            className="rounded-2xl overflow-hidden border border-blue-100 shadow-md"
           >
-            <div>
-              <label className="block text-sm font-semibold text-slate-900 mb-2">
-                Seu primeiro nome (opcional)
-              </label>
-              <input
-                type="text"
-                placeholder="Ex: João"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-                className="w-full px-6 py-3 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-slate-900 mb-2">
-                Horário: <span className="text-blue-600 font-bold">{new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
-              </label>
-              <input
-                type="hidden"
-                name="horario"
-                value={new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
-              />
-              <p className="text-sm text-slate-600">Horário registrado automaticamente</p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-slate-900 mb-3">
-                Como avalia este conteúdo?
-              </label>
-              <div className="flex gap-3 justify-center">
-                {['😞', '😐', '🙂', '😊', '😍'].map((emoji, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className="py-3 text-4xl hover:scale-125 transition transform"
-                    onClick={() => {}}
-                  >
-                    {emoji}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-green-500 text-white font-semibold rounded-lg hover:shadow-lg transition"
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSf_qcoXcgFU6f9g9Z7UPL1-zbL7JpO9ziQmyzIYP44AW09ojA/viewform?embedded=true"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
             >
-              Enviar Avaliação
-            </button>
-
-            {submitted && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-700 text-center font-semibold"
-              >
-                ✓ Obrigado por sua avaliação!
-              </motion.div>
-            )}
-          </motion.form>
+              Carregando…
+            </iframe>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -501,7 +437,7 @@ export default function Home() {
                 <Mail className="w-5 h-5" />
                 tekboxs@gmail.com
               </a>
-              <a href="https://wa.me/5569" className="flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold">
+              <a href="https://chat.whatsapp.com/LUrSDBdTyNiEg5HSVk0nSY" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold">
                 <Phone className="w-5 h-5" />
                 WhatsApp
               </a>
