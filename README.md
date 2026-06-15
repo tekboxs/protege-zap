@@ -40,23 +40,6 @@ npm run build
 npm start
 ```
 
-## 🌐 Deploy na Vercel
-
-### Opção 1: Conectar ao Vercel CLI
-
-```bash
-npm i -g vercel
-vercel
-```
-
-### Opção 2: Conectar ao GitHub + Vercel Web
-
-1. Faça commit do projeto no GitHub
-2. Acesse [vercel.com](https://vercel.com)
-3. Clique em "New Project"
-4. Selecione o repositório
-5. Clique em "Deploy"
-
 ## 🛠️ Tecnologias
 
 - **Next.js 15**: Framework React com otimizações
@@ -81,9 +64,9 @@ O site é totalmente responsivo, funcionando perfeitamente em:
 
 ## 📧 Contato
 
-- Email: speakebrasil@gmail.com
+- Email: tekboxs@gmail.com
 - Projeto: UNINTER - Escola Superior Politécnica
-- Aluno: Miguel Casagrande dos Santos (RU: 5168345)
+- Aluno: Miguel Casa Grande dos Santos (RU: 5168345)
 
 ## 📄 Licença
 
